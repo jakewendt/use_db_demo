@@ -1,6 +1,6 @@
 = use_db_demo
 
-Rails app demo of {use_db}[http://github.com/remi/use_db] (not included) multi-database plugin.
+Rails app demo of {use_db}[http://github.com/remi/use_db] multi-database plugin (not included).
 
 == FYI
 
