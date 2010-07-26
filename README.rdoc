@@ -1,6 +1,15 @@
-= use_db_demo
+= Rails UseDb Plugin Demo
 
-Rails app demo of {use_db}[http://github.com/remi/use_db] multi-database plugin (not included).
+
+== Requires ...
+
+* {use_db}[http://github.com/remi/use_db] multi-database plugin (included).
+
+== Then ...
+
+* rake db:create:all
+* rake db:migrate
+* rake
 
 == FYI
 
