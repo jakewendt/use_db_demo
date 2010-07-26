@@ -6,3 +6,5 @@ Rails app demo of {use_db}[http://github.com/remi/use_db] multi-database plugin 
 
 Does not seem to work with sqlite3.
 
+I wrote this a few years ago and don't maintain it.
+
