@@ -37,10 +37,13 @@ private
 #	this loop includes TestModelAlphaForClone, TestModelAlphaForPurge, TestModelAlphaForDumpStructure
 #	after the first loop.  These AR's are "connected", but not "active"
 #
+begin
 				if ar.connection.active? and ar.table_exists? and !ignore_differences.include?(ar.to_s)
 					ddhash["#{ar.name}.count"] = 0
 					ddhash["#{ar.name}.next_id"] = 0
 				end
+rescue ActiveRecord::ConnectionNotEstablished
+end
 			end
 			ddhash.merge(add_differences)
 		)

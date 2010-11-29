@@ -31,7 +31,13 @@ module TableStatus
 		def table_status
 #			r=ActiveRecord::Base.connection.execute("show table status from #{self.connection.current_database} like '#{self.table_name}'")
 			r=self.connection.execute("show table status where name = '#{self.table_name}'")
-			r.fetch_hash
+			##<Mysql::Result:0x1036f0078>	- normal
+			if defined?(Mysql) && defined?(Mysql::Result) && r.is_a?(Mysql::Result)
+				r.fetch_hash
+			else
+			#[{"Name"=>"gammas", "Engine"=>"InnoDB", "Version"=>"10", "Row_format"=>"Compact", "Rows"=>"2", "Avg_row_length"=>"8192", "Data_length"=>"16384", "Max_data_length"=>"0", "Index_length"=>"0", "Data_free"=>"30408704", "Auto_increment"=>"3", "Create_time"=>"2010-11-29 11:03:49.0", "Update_time"=>nil, "Check_time"=>nil, "Collation"=>"utf8_unicode_ci", "Checksum"=>nil, "Create_options"=>"", "Comment"=>""}]	- jruby jdbc mysql
+				r.first
+			end
 		end
 
 		def auto_increment
