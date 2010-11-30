@@ -5,10 +5,11 @@ class GammaTest < ActiveSupport::TestCase
 
 	test "should create" do
 #		puts Gamma.connection.current_database
-		assert_only_differences({
-			'Gamma.count' => 1,
-			'Gamma.next_id' => 1
-		}) {
+#		assert_only_differences({
+#			'Gamma.count' => 1,
+#			'Gamma.next_id' => 1
+#		}) {
+		assert_difference('Gamma.count') {
 			assert Gamma.create()
 		}
 	end

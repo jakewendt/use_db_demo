@@ -5,10 +5,11 @@ class AlphaTest < ActiveSupport::TestCase
 
 	test "should create" do
 #		puts Alpha.connection.current_database
-		assert_only_differences({
-			'Alpha.count' => 1,
-			'Alpha.next_id' => 1
-		}) {
+#		assert_only_differences({
+#			'Alpha.count' => 1,
+#			'Alpha.next_id' => 1
+#		}) {
+		assert_difference('Alpha.count') {
 			assert Alpha.create()
 		}
 	end
