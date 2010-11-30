@@ -41,6 +41,7 @@ Rails::Initializer.run do |config|
 		config.gem "sqlite3-ruby", :lib => "sqlite3"
 	end
 
+	config.gem "jakewendt-use_db", :lib => "use_db"
 
 	config.time_zone = 'UTC'
 end
